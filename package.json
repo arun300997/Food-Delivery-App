@@ -1,0 +1,33 @@
+{
+  "name": "phase-1",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/arun300997/phase-1#readme",
+  "bugs": {
+    "url": "https://github.com/arun300997/phase-1/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arun300997/phase-1.git"
+  },
+  "license": "ISC",
+  "author": "arun",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-icons": "^5.5.0",
+    "react-router": "^6.22.3",
+    "react-router-dom": "^6.22.3",
+    "tailwindcss": "^4.2.0"
+  }
+}
