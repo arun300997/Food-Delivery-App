@@ -2,11 +2,10 @@ import { IoIosArrowDown } from "react-icons/io";
 import ItemList from "./ItemList";
 import { useState } from "react";
 
-const RestaurantCategory = ({data}) => {
-    const [isOpen, setIsOpen] = useState(false);
+const RestaurantCategory = ({data, isOpen, setShowIndex}) => {
 
     const handleClick = () => {
-        setIsOpen(!isOpen);
+        setShowIndex();
     }
     
     return (

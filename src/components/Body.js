@@ -1,7 +1,8 @@
 import RestuarantCard, {withPrometedLabel} from "./RestaurantCard"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext} from "react"
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom";
+import userContext from "../utils/UserContext";
 
 const Body = () => {
 
@@ -45,6 +46,8 @@ const Body = () => {
 
     }
 
+    const {loggedInUser,setUserName} = useContext(userContext)
+
 
     return (listOfRestaurants.length === 0)  ? <Shimmer/> : (
         <div className="body">
@@ -59,16 +62,18 @@ const Body = () => {
             onClick={() => {
                 const filteredRestaurants = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()))
                 setFilteredRestaurants(filteredRestaurants)
-                console.log(filteredRestaurants);
                 
             }}>Search</button>
           </div>
-            <button className="filter-btn"
-            onClick={() => {
-               const  ListOfRestaurants = listOfRestaurants.filter((res) => res.info.avgRating > 4.5 )   
-               setListOfRestaurants(ListOfRestaurants)          
-            }}
-            >Top Rated Restaurant</button>
+          <div className="search px-4 m-4 justify-between flex">
+            <input type="text"
+            className=" w-330 px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+            placeholder="Username" 
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+            />
+          </div>
+
         </div>
          <div className="flex flex-wrap">
             {
